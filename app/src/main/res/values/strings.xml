@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Rural-Healthy-Mom-To-Be</string>
+    <string name="app_name">Healthy Maternity</string>
+    <string name="welcome">Welcome</string>
+    <string name="title_activity_tnc">TNCActivity</string>
 </resources>
