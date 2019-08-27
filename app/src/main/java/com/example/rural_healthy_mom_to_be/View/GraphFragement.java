@@ -2,9 +2,8 @@ package com.example.rural_healthy_mom_to_be.View;
 
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +25,7 @@ import com.github.mikephil.charting.utils.Utils;
 import java.util.ArrayList;
 
 
-public class GraphFragement {
+public class GraphFragement extends Fragment{
     //Initial
     private View vReport;
     private LineChart chart;

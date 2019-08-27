@@ -1,5 +1,8 @@
 package com.example.rural_healthy_mom_to_be.View;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -79,11 +82,11 @@ public class HomepageActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Fragment nextFragment = null;
         if (id == R.id.nav_home) {
             // Handle the camera action
         } else if (id == R.id.nav_gallery) {
-
+            nextFragment = new GraphFragement();
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_tools) {
@@ -94,6 +97,9 @@ public class HomepageActivity extends AppCompatActivity
 
         }
 
+        FragmentManager fragmentManager = getFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.drawer_layout,
+                nextFragment).commit();
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
