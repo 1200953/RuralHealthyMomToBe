@@ -22,9 +22,14 @@ public class FormActivity extends AppCompatActivity {
     private EditText etUserName;
     private EditText etHeight;
     private EditText etWeightBeforePreg;
+    private EditText etCurrentWeight;
+    private EditText etWeeksPregnant;
     private String username;
     private double height;
     private double prePregnancyWeight;
+    private double currentWeight;
+    private int weeksPregnant;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,12 +37,13 @@ public class FormActivity extends AppCompatActivity {
   }
 
     protected void nextForm(View view){
-
+        int flag = 0;
         etUserName = (EditText)findViewById(R.id.etUserName);
 
         //If username is empty
         if(etUserName.getText().toString().isEmpty()){
             etUserName.setError("This field is mandatory!");
+            flag = 1;
         }
         else{
             username = etUserName.getText().toString();
@@ -46,6 +52,7 @@ public class FormActivity extends AppCompatActivity {
         //If height is empty
         if(etHeight.getText().toString().isEmpty()){
             etHeight.setError("This field is mandatory!");
+            flag = 1;
         }
         else{
             height = Double.parseDouble(etHeight.getText().toString());
@@ -55,11 +62,34 @@ public class FormActivity extends AppCompatActivity {
         //If weight before pregnancy is empty
         if(etWeightBeforePreg.getText().toString().isEmpty()){
             etWeightBeforePreg.setError("This field is mandatory!");
+            flag = 1;
         }
         else{
             prePregnancyWeight = Double.parseDouble(etWeightBeforePreg.getText().toString());
         }
-        if(!etUserName.getText().toString().isEmpty() && !etHeight.getText().toString().isEmpty() && !etWeightBeforePreg.getText().toString().isEmpty()) {
+        etCurrentWeight = (EditText)findViewById(R.id.etCurrentWeight);
+
+        //If etCurrentWeight is empty
+        if(etCurrentWeight.getText().toString().isEmpty()){
+            etCurrentWeight.setError("This field is mandatory!");
+            flag = 1;
+        }
+        else{
+            currentWeight = Double.parseDouble(etCurrentWeight.getText().toString());
+        }
+
+
+
+        etWeeksPregnant = (EditText)findViewById(R.id.etWeeksPregnant);
+        //If etWeeksPregnant is empty
+        if(etWeeksPregnant.getText().toString().isEmpty()){
+            etWeeksPregnant.setError("This field is mandatory!");
+            flag = 1;
+        }
+        else{
+            weeksPregnant = Integer.parseInt(etWeeksPregnant.getText().toString());
+        }
+        if(flag == 0) {
             CheckUsernameIfExist checkUsernameIfExist = new CheckUsernameIfExist();
             checkUsernameIfExist.execute(etUserName.getText().toString());
         }
@@ -80,13 +110,8 @@ public class FormActivity extends AppCompatActivity {
             //ToChange
             //if((match.equals("[]"))){
             if(true){
-                Intent intent = new Intent(FormActivity.this, Form2Activity.class);
-             //   Sending user attributes
-                intent.putExtra("username",username);
-                intent.putExtra("height",height);
-                intent.putExtra("prePregnancyWeight",prePregnancyWeight);
-                startActivity(intent);
-            }
+                Intent intent = new Intent(FormActivity.this, HomepageActivity.class);
+                startActivity(intent);            }
             else{
                 etUserName.setError("Username already exists!");
             }
