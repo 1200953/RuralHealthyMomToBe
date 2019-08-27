@@ -1,21 +1,13 @@
 package com.example.rural_healthy_mom_to_be.View;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Spannable;
-import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.example.rural_healthy_mom_to_be.MainActivity;
-import com.example.rural_healthy_mom_to_be.Model.User;
 import com.example.rural_healthy_mom_to_be.R;
-import com.example.rural_healthy_mom_to_be.Repository.CheckUserNameClient;
 
 public class FormActivity extends AppCompatActivity {
 
@@ -110,7 +102,7 @@ public class FormActivity extends AppCompatActivity {
             //ToChange
             //if((match.equals("[]"))){
             if(true){
-                Intent intent = new Intent(FormActivity.this, HomepageActivity.class);
+                Intent intent = new Intent(FormActivity.this, NavigationDrawer.class);
                 startActivity(intent);            }
             else{
                 etUserName.setError("Username already exists!");
