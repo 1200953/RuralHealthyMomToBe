@@ -43,7 +43,7 @@ public class WeightGraphFragment extends Fragment {
         chart.setDragEnabled(true);
         chart.setScaleEnabled(true);
 
-        chart.setPinchZoom(false);
+        chart.setPinchZoom(true);
 
         // get the legend (only possible after setting data)
         Legend l = chart.getLegend();
