@@ -6,17 +6,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.TextView;
 
 import com.example.rural_healthy_mom_to_be.R;
 
 public class WelcomeActvity extends AppCompatActivity {
     private CheckBox checkBoxTNC;
+    private TextView textViewErrorMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_actvity);
         checkBoxTNC = (CheckBox)findViewById(R.id.checkboxTNC);
+        textViewErrorMessage = (TextView) findViewById(R.id.textViewError);
     }
 
     // when welcome button is clicked
@@ -26,7 +29,8 @@ public class WelcomeActvity extends AppCompatActivity {
             startActivity(intent);
         }
         else{
-            
+            checkBoxTNC.setError("Read and accept our terms first!");
+
         }
     }
 }

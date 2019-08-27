@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">Healthy Maternity</string>
     <string name="welcome">Welcome</string>
-    <string name="title_activity_tnc">TNCActivity</string>
+    <string name="register">Registration Form</string>
 </resources>

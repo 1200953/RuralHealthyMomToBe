@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.FormActivity"></activity>
+        <activity android:name=".View.Form2Activity"></activity>
+        <activity android:name=".View.FormActivity" />
         <activity android:name=".View.TNCActivity" />
         <activity android:name=".View.WelcomeActvity">
             <intent-filter>

@@ -26,12 +26,13 @@
         android:textColor="#ffffff"
         android:textAllCaps="false"
         android:textSize="23sp"
-        android:onClick="welcomeClicked"/>
+        android:onClick="welcomeClicked"
+        android:focusableInTouchMode="true"/>
     <CheckBox
         android:id="@+id/checkboxTNC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I accept Term of use"
+        android:text="I accept Term of use "
         android:textColor="#2E10D6"
         android:buttonTint="#2E10D6"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +41,15 @@
         android:layout_marginTop="@android:dimen/app_icon_size"
         android:layout_marginBottom="@android:dimen/app_icon_size"
         android:layout_centerHorizontal="true"
-        android:checked="true"/>
+        android:checked="true"
+        />
+    <TextView
+        android:id="@+id/textViewError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_below="@+id/checkboxTNC"
+        android:layout_centerHorizontal="true"/>
 
 
 
