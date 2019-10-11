@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+        <TextView
+            android:id="@+id/addheading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="            Add a food"
+            android:padding="8dp"
+            android:textSize="@dimen/medium_text_size"
+            android:textColor="@android:color/white"
+            android:layout_centerHorizontal="true"
+            android:background="#FB9907"
+            />
+
+    <View
+        android:id="@+id/bottomLineAdd"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:alpha=".5"
+        android:layout_below="@id/addheading"
+        android:background="@android:color/black" />
+    <ImageView
+        android:layout_marginTop="18dp"
+        android:id="@+id/iv_fooddiaryy"
+        android:layout_width="match_parent"
+        android:layout_height="192dp"
+        app:srcCompat="@drawable/fooddiaryy" >
+    </ImageView>
+    <LinearLayout
+        android:id="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_fooddiaryy"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/big_text_size"
+        android:baselineAligned="true">
+        <EditText
+            android:layout_marginLeft="20dp"
+            android:id="@+id/et_searchFood"
+            android:padding="8dp"
+            android:layout_below="@+id/bottomLineAdd"
+            android:layout_width="wrap_content"
+            android:hint="Please enter what you had today"
+            android:layout_height="wrap_content"
+            >
+        </EditText>
+        <Button
+            android:id="@+id/searchButton"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:textColor="#ffffff"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            >
+        </Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/quantityLayout"
+        android:layout_below="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Size of your serve: "
+            android:visibility="gone">
+        </TextView>
+        <EditText
+            android:id="@+id/et_sizeFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+        </EditText>
+        <TextView
+            android:id="@+id/unitFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+        </TextView>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutFacts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/quantityLayout"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/nutrientHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nutrient values:"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000000"
+            >
+        </TextView>
+        <TextView
+            android:layout_below="@+id/nutrientHeading"
+            android:id="@+id/tv_goalset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:text="calories(kcal)"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:id="@+id/tv_cal_values"
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tv_goalset"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="150dp"
+            android:layout_toRightOf="@id/tv_goalset"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+
+
+        <TextView
+            android:id="@+id/tv_total_steps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:text="Fat(g)                  "
+            android:layout_below="@+id/tv_goalset"
+            android:textColor="#000000"
+            />
+
+        <TextView
+            android:id="@+id/tv_fat_values"
+            android:layout_width="134dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tv_total_steps"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="130dp"
+            android:layout_toRightOf="@id/tv_total_steps"
+            android:textColor="#000000"
+            android:textSize="18sp" />
+
+
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutFacts"
+        android:id="@+id/addQuantity"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tvEnterQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Enter quantity:  "
+            android:textColor="#000000"
+            android:textSize="18sp"
+            >
+
+        </TextView>
+        <EditText
+            android:layout_toRightOf="@+id/tvEnterQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/etQuantity"
+            android:hint="                              "
+            >
+
+        </EditText>
+
+        <TextView
+            android:id="@+id/tvServingUnit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/etQuantity"
+            android:text="  gm"
+
+            >
+
+        </TextView>
+    </RelativeLayout>
+<Button
+    android:id="@+id/confirmAddButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Confirm"
+    android:textAllCaps="false"
+    android:background="@color/colorPrimary"
+    android:layout_marginLeft="20dp"
+    android:layout_below="@id/addQuantity"
+    android:textColor="#ffffff"
+    android:visibility="gone"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_alignParentRight="true">
+
+</Button>
+</RelativeLayout>
